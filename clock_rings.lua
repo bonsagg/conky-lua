@@ -102,7 +102,7 @@ settings_table = {
         end_angle=90
     },
     {
-        name='battery_percent',
+        name='battery_percent BAT1',
         arg='',
         max=100,
         bg_colour=0xffffff,

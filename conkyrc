@@ -8,7 +8,7 @@ default_color FFFFFF
 
 text_buffer_size 1024
 minimum_size 300 768
-alignment middle_right
+alignment bottom_right
 background no
 border_width 0 
 cpu_avg_samples 2
@@ -57,39 +57,31 @@ lua_draw_hook_pre clock_rings
 TEXT
 ${voffset 8}${color 00ff00}${font Caviar Dreams:size=16}${time %A}${font}${voffset -8}${alignr 50}${color FFFFFF}${font Caviar Dreams:size=38}${time %e}${font}
 ${color FFFFFF}${voffset -30}${color FFFFFF}${font Caviar Dreams:size=18}${time %b}${font}${voffset -3} ${color FFFFFF}${font Caviar Dreams:size=20}${time %Y}${font}${color 00ff00}${hr}
-${voffset 150}${font Caviar Dreams:size=10}${alignr}NVidia Optimus: ${color}${execi 60 cat /proc/acpi/bbswitch | awk '{print $2}'}
-${alignr}Temp${font}
-${font Caviar Dreams:size=12}${color FFFFFF}${alignr}${execi 900 lynx -source  http://www.wetter.com/wetter_aktuell/aktuelles_wetter/deutschland/kaiserslautern/DE0005230.html | grep °C | head -n1 | sed 's/ //g'}${font}
-#${image ~/.conky/debian-logo.png -p 68,120 -s 60x60}
-${color FFFFFF}${goto 42}${voffset 25}${battery_percent}${goto 80}${alignr}Time left:
-${color 00ff00}${goto 4}${voffset 5}Battery${goto 80}${alignr}${battery_time}
-${goto 70}${stippled_hr}
-#
+${voffset 125}
+${font Caviar Dreams:size=8}
 ${goto 105}${color FFFFFF}${voffset 5}${alignr}Temp: ${color 00FF00}${hwmon temp 1} °C
-${color FFFFFF}${goto 67}${voffset 8}${cpu cpu0}%${goto 105}${color FFFFFF}${alignr}Freq: ${color 00FF00}${freq}Mhz
-${color 00ff00}${goto 43}${voffset 9}CPU${goto 105}${color FFFFFF}${alignr}Load: ${color 00FF00}${loadavg 1,2,3}
+${goto 105}${color FFFFFF}${alignr}Freq: ${color 00FF00}${freq}Mhz
+${goto 105}${color FFFFFF}${alignr}Load: ${color 00FF00}${loadavg 1,2,3}
 ${goto 95}${stippled_hr}
+${color FFFFFF}${goto 40}${voffset 10}${battery_percent BAT1}%
+${color 00ff00}${goto 4}${voffset 1}Battery
 #
-${color FFFFFF}${goto 42}${voffset 22}${memperc}%${goto 117}${swapperc}%
-${color 00ff00}${goto 18}${voffset 6}RAM${goto 85}Swap
-${goto 145}${stippled_hr}
+${color FFFFFF}${goto 67}${voffset 25}${cpu cpu0}%
+${color 00ff00}${goto 43}${voffset 0}CPU
 #
-${goto 115}${alignr}${diskiograph /dev/sda 15,80 00CC00 00FF00 -t}
-${color FFFFFF}${goto 65}${voffset 0}${fs_used_perc /}%${goto 115}${color FFFFFF}${alignr}Read: ${color 00FF00}${diskio_read /dev/sda}
-${color 00ff00}${goto 35}${voffset 5}Root${goto 115}${color FFFFFF}${alignr}Write: ${color 00FF00}${diskio_write /dev/sda}
-${goto 95}${stippled_hr}
+${color FFFFFF}${goto 38}${voffset 25}${memperc}%${goto 117}${swapperc}%
+${color 00ff00}${goto 13}${voffset -3}RAM${goto 85}Swap
 #
-${color FFFFFF}${goto 42}${voffset 24}${fs_used_perc /home}%
-${color 00ff00}${goto 12}${voffset 5}Home
+${color FFFFFF}${goto 62}${voffset 26}${fs_used_perc /home}%
+${color 00ff00}${goto 30}${voffset -5}Home
 #
-${font digitalix:size=4}
-${color FFFFFF}${goto 60}${voffset 23}${downspeed wlan0}${color FFFFFF}${goto 120}${downspeed eth0}
-${color FFFFFF}${goto 58}${voffset 5}${upspeed wlan0}${color FFFFFF}${goto 120}${upspeed eth0}
-${font}${color 00ff00}${goto 39}${voffset 5}wlan0${font}${color 00ff00}${goto 95}eth0
+${color FFFFFF}${goto 38}${voffset 30}${fs_used_perc /}%
+${color 00ff00}${goto 10}${voffset -7}Root
+#
+${color 00ff00}${goto 39}${voffset 48}wlan0${color 00ff00}${goto 98}eth0
+${font}
 
-
-
-
+${voffset 15}
 ${color FFFFFF}${font Caviar Dreams:size=8}Uptime: ${uptime_short}
 ${color FFFFFF}${font Caviar Dreams:size=8}Processes: ${processes}
 ${color FFFFFF}${font Caviar Dreams:size=8}Running: ${running_processes}
