@@ -58,10 +58,10 @@ TEXT
 ${voffset 8}${color 00ff00}${font Caviar Dreams:size=16}${time %A}${font}${voffset -8}${alignr 50}${color FFFFFF}${font Caviar Dreams:size=38}${time %e}${font}
 ${color FFFFFF}${voffset -30}${color FFFFFF}${font Caviar Dreams:size=18}${time %b}${font}${voffset -3} ${color FFFFFF}${font Caviar Dreams:size=20}${time %Y}${font}${color 00ff00}${hr}
 ${voffset 125}
-${font Caviar Dreams:size=8}
+${font Caviar Dreams:size=8.5}
 ${goto 105}${color FFFFFF}${voffset 5}${alignr}Temp: ${color 00FF00}${hwmon temp 1} °C
 ${goto 105}${color FFFFFF}${alignr}Freq: ${color 00FF00}${freq}Mhz
-${goto 105}${color FFFFFF}${alignr}Load: ${color 00FF00}${loadavg 1,2,3}
+
 ${goto 95}${stippled_hr}
 ${color FFFFFF}${goto 40}${voffset 10}${battery_percent BAT1}%
 ${color 00ff00}${goto 4}${voffset 1}Battery
@@ -81,12 +81,11 @@ ${color 00ff00}${goto 10}${voffset -7}Root
 ${color 00ff00}${goto 39}${voffset 48}wlan0${color 00ff00}${goto 98}eth0
 ${font}
 
-${voffset 15}
-${color FFFFFF}${font Caviar Dreams:size=8}Uptime: ${uptime_short}
-${color FFFFFF}${font Caviar Dreams:size=8}Processes: ${processes}
-${color FFFFFF}${font Caviar Dreams:size=8}Running: ${running_processes}
+${voffset 5}
+${color FFFFFF}${font Caviar Dreams:size=9}Uptime: ${uptime_short}
+${color FFFFFF}${font Caviar Dreams:size=9}Processes: ${processes}
+${color FFFFFF}${font Caviar Dreams:size=9}Running: ${running_processes}
 
-
-${color 00ff00}${font Caviar Dreams:size=8}${alignr}${nodename}
-${color 00ff00}${font Caviar Dreams:size=8}${alignr}${pre_exec cat /etc/issue.net}  $machine
-${color 00ff00}${font Caviar Dreams:size=8}${alignr}Kernel: ${kernel}
+${color 00ff00}${font Caviar Dreams:size=9}${alignr}${nodename}
+${color 00ff00}${font Caviar Dreams:size=9}${alignr}${pre_exec cat /etc/issue.net}  $machine
+${color 00ff00}${font Caviar Dreams:size=9}${alignr}Kernel: ${kernel}
